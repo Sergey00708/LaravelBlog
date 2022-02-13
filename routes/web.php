@@ -18,6 +18,12 @@ Route::group(['namespace'=>'Main'], function(){
     Route::get('/','IndexController');
 });
 
+Route::group(['namespace'=>'admin', 'prefix'=>'admin'], function(){
+    Route::group(['namespace'=>'Main'], function(){
+        Route::get('/','IndexController');
+    });
+});
+
 Auth::routes();
 
 
